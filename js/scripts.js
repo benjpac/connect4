@@ -88,6 +88,13 @@ $(document).ready(function() {
  var currentGame = new Game(player1, player2, 4, 4)
  console.log(currentGame)
  currentGame.initializeGame()
+ for (var i = 0; i < currentGame.boardObj.rows; i++) {
+   $("table").append("<tr id='y" + i + "'>")
+   $("table").append("</tr>")
+ }
+ for (var j = 0; j < currentGame.boardObj.cols; j++) {
+   $("table tr").append("<td id='x" + j + "'>")
+ }
 
  $("#x0y0").click(function() {
    currentGame.turn(0)
